@@ -3,7 +3,7 @@ name: Build WASM
 on:
   push:
     branches:
-      - master  # 适当修改为你的主分支
+      - master  # 合适的主分支
   pull_request:
 
 jobs:
@@ -18,16 +18,18 @@ jobs:
         run: |
           git clone https://github.com/emscripten-core/emsdk.git
           cd emsdk
-          git checkout 1.39.9  # 选择适合的版本
+          git checkout 1.39.9
           ./emsdk install latest
           ./emsdk activate latest
-          source ./emsdk_env.sh
+          echo "PATH=\$PATH:$(pwd)/emsdk/upstream/emscripten" >> $GITHUB_ENV
+
       - name: Compile to WebAssembly
         run: |
           mkdir build
           mkdir -p dist/wasm
           cd interpreter
           make
+
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
