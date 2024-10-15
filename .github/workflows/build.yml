@@ -21,10 +21,7 @@ jobs:
           git checkout 1.39.9
           ./emsdk install latest
           ./emsdk activate latest
-          echo "PATH=\$PATH:$(pwd)/emsdk/upstream/emscripten" >> $GITHUB_ENV
-
-      - name: Compile to WebAssembly
-        run: |
+          source ./emsdk_env.sh
           mkdir build
           mkdir -p dist/wasm
           cd interpreter
