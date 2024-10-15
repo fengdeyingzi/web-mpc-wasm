@@ -22,6 +22,8 @@ jobs:
           ./emsdk install latest
           ./emsdk activate latest
           source ./emsdk_env.sh
+      - name: Makefile
+        run: |
           mkdir build
           mkdir -p dist/wasm
           cd interpreter
