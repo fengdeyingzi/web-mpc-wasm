@@ -1,0 +1,41 @@
+{
+    "name": "web-picoc",
+    "private": true,
+    "version": "0.0.0",
+    "description": "Web Picoc",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "make": "cd interpreter && make"
+    },
+    "author": "luoluo",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/react": "^18.2.74",
+        "@types/react-dom": "^18.2.24",
+        "@typescript-eslint/eslint-plugin": "^7.5.0",
+        "@typescript-eslint/parser": "^7.5.0",
+        "@uiw/codemirror-theme-github": "^4.21.25",
+        "@uiw/codemirror-theme-quietlight": "^4.21.25",
+        "@vitejs/plugin-react": "^4.2.1",
+        "@codemirror/lang-cpp": "^6.0.2",
+        "@uiw/react-codemirror": "^4.21.25",
+        "mobx": "^6.12.3",
+        "mobx-react-lite": "^4.0.7",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "ahooks": "^3.7.11",
+        "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.6",
+        "lodash-es": "^4.17.21",
+        "nanoid": "^5.0.7",
+        "react-bootstrap": "^2.10.2",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.8"
+    }
+}

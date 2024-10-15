@@ -1,0 +1,35 @@
+name: Build WASM
+
+on:
+  push:
+    branches:
+      - master  # 适当修改为你的主分支
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Emscripten
+        run: |
+          git clone https://github.com/emscripten-core/emsdk.git
+          cd emsdk
+          git checkout 1.39.9  # 选择适合的版本
+          ./emsdk install latest
+          ./emsdk activate latest
+          source ./emsdk_env.sh
+      - name: Compile to WebAssembly
+        run: |
+          mkdir build
+          mkdir -p dist/wasm
+          cd interpreter
+          make
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: webmpc-${{ matrix.os }}
+          path: dist/wasm*

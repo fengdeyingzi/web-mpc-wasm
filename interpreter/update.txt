@@ -1,0 +1,26 @@
+在原有Picoc项目所做的修改:
+
+platform.h:
+ - 注释掉宏(52行): USE_READLINE
+ 
+interpreter.h:
+ - 注释(453行):  IOFILE CStdOutBase;
+ - 注释掉这三行652~653:
+/* unistd.c */
+// extern const char UnistdDefs[];
+// extern struct LibraryFunction UnistdFunctions[];
+// void UnistdSetupFunc(Picoc *pc);
+
+include.c
+ - 注释掉25行:
+    // IncludeRegister(pc, "unistd.h", &UnistdSetupFunc, &UnistdFunctions[0], UnistdDefs);
+
+cstdlib/stdio.c
+ - 注释687，693两行(含有类型FILE)
+
+ 
+ 
+如何添加一个新的库, 如 base.h
+1. 创建 mpc_lib/base.c
+2. 修改 interpreter.h , 在尾部添加 mpc_lib/base.c 的符号声明
+3. 修改 include.c 的 IncludeInit(), 在其中增加 base.h 的注册

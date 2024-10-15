@@ -1,0 +1,22 @@
+
+.vh100 {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.hover-light:hover {
+    background-color: #eee;
+}
+
+.hover-grey:hover {
+    background-color: #ddd;
+}
+
+.hover-ns-resize {
+    cursor: ns-resize;
+}
