@@ -18,17 +18,19 @@ jobs:
         run: |
           git clone https://github.com/emscripten-core/emsdk.git
           cd emsdk
-          git checkout 1.39.9
+          git checkout 3.1.69
           ./emsdk install latest
           ./emsdk activate latest
           source ./emsdk_env.sh
+          emcc -v
           cd ../
-      - name: Makefile
-        run: |
           mkdir build
           mkdir -p dist/wasm
-          cd interpreter
-          make
+          cd emsdk
+          source ./emsdk_env.sh
+          emcc -v
+          make ../interpreter/Makefile
+
 
       - name: Upload binary
         uses: actions/upload-artifact@v4
