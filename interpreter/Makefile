@@ -7,7 +7,7 @@ INCLUDES=-I$(PICOC_SRC)
 LIB_PATHs=
 LIBS=-lm
 OPTIONS=-s ASSERTIONS \
-	-s EXPORTED_RUNTIME_METHODS=ccall,cwrap \
+	-s EXPORTED_RUNTIME_METHODS=[ccall,cwrap] \
 	-s EXIT_RUNTIME=0 \
 	-s FORCE_FILESYSTEM=1 \
 	--embed-file $(SRC)/embed-file/workspace@/workspace \
