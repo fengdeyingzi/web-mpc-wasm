@@ -1,19 +1,19 @@
-// ½«ÓÉ JS API ×¢Èëµ½ C »·¾³
-// JavaScriptÓëC/C++Ö®¼äÖ»ÄÜÍ¨¹ýnumber½øÐÐ²ÎÊýºÍ·µ»ØÖµ´«µÝ
+// å°†ç”± JS API æ³¨å…¥åˆ° C çŽ¯å¢ƒ
+// JavaScriptä¸ŽC/C++ä¹‹é—´åªèƒ½é€šè¿‡numberè¿›è¡Œå‚æ•°å’Œè¿”å›žå€¼ä¼ é€’
 
 addToLibrary({
 
-    // ±àÂë×ª»»: inType -> outType
+    // ç¼–ç è½¬æ¢: inType -> outType
     js_iconv: function(inType, pInStr, inBytes, outType, pOutStr, pOutBytes) {
         return js_api.iconv(inType, pInStr, inBytes, outType, pOutStr, pOutBytes);
     },
 
-    // ±àÂë×ª»»: utf8 -> gb2312
+    // ç¼–ç è½¬æ¢: utf8 -> gb2312
     js_u2c: function (pInStr, inBytes, pOutStr, pOutBytes) {
         return js_api.u2c(pInStr, inBytes, pOutStr, pOutBytes);
     },
 
-    // ±àÂë×ª»»: gb2312 -> utf8
+    // ç¼–ç è½¬æ¢: gb2312 -> utf8
     js_c2u: function (pInStr, inBytes, pOutStr, pOutBytes) {
         return js_api.c2u(pInStr, inBytes, pOutStr, pOutBytes);
     },
